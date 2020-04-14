@@ -17,7 +17,10 @@ namespace CodilitySolutions
             //Console.WriteLine(MissingInteger.solution(new int[] { 1, 3, 6, 4, 1, 2 }));
             //Console.WriteLine(PermCheck.solution(new int[] { 4, 1, 3 }));
             //Console.WriteLine(PassingCars.solution(new int[] { 1, 0, 1, 0, 0, 1, 1 }));
-            Console.WriteLine(CountDiv.solution(6, 11, 2));
+            //Console.WriteLine(CountDiv.solution(6, 11, 2));
+
+            var result = GenomicRangeQuery.solution("CAGCCTA", new int[] { 2, 5, 0 }, new int[] { 4, 5, 6 });
+
             Console.Read();
         }
     }

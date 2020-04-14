@@ -8,45 +8,47 @@ namespace CodilitySolutions
     {
         public static int[] solution(int N, int[] A)
         {
-            var result = new int[N];
-
-            int maxCounter = 0;
-            bool applyMaxCounter = false;
+            int condition = N + 1;
+            int currentMax = 0;
+            int lastUpdate = 0;
+            var countersArray = new int[N];
 
             for (int i = 0; i < A.Length; i++)
             {
-                int item = A[i];
-                if (item > N)
+                int currentValue = A[i];
+                if (currentValue == condition)
                 {
-                    if (applyMaxCounter)
-                    {
-                        applyMaxCounter = false;
-                        setAllItems(result, maxCounter);
-                    }
+                    lastUpdate = currentMax;
                 }
                 else
                 {
-                    int currentValue = result[item - 1];
-                    currentValue++;
-                    result[item - 1] = currentValue;
-
-                    if (currentValue > maxCounter)
+                    int position = currentValue - 1;
+                    if (countersArray[position] < lastUpdate)
                     {
-                        maxCounter = currentValue;
-                        applyMaxCounter = true;
+                        countersArray[position] = lastUpdate + 1;
                     }
+                    else
+                    {
+                        countersArray[position]++;
+                    }
+
+                    if (countersArray[position] > currentMax)
+                    {
+                        currentMax = countersArray[position];
+                    }
+                }
+
+            }
+
+            for (int i = 0; i < N; i++)
+            {
+                if (countersArray[i] < lastUpdate)
+                {
+                    countersArray[i] = lastUpdate;
                 }
             }
 
-            return result;
-        }
-
-        private static void setAllItems(int[] array, int value)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = value;
-            }
+            return countersArray;
         }
     }
 }
