@@ -14,7 +14,8 @@ namespace CodilitySolutions
             //Console.WriteLine(TapeEquilibrium.solution(new int[] { 3, 1, 2, 4, 3 }));
             //Console.WriteLine(FrogRiverOne.solution(5, new int[] { 1, 3, 1, 4, 2, 3, 5, 4 }));
             //var result = MaxCounters.solution(5, new int[] { 3, 4, 4, 6, 1, 4, 4 });
-            Console.WriteLine(MissingInteger.solution(new int[] { 1, 3, 6, 4, 1, 2 }));
+            //Console.WriteLine(MissingInteger.solution(new int[] { 1, 3, 6, 4, 1, 2 }));
+            Console.WriteLine(PermCheck.solution(new int[] { 4, 1, 3 }));
             Console.Read();
         }
     }
